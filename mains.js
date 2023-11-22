@@ -1,11 +1,8 @@
 //a função que deve ser executada é tocaSom, mas que som? Nesse caso, sará o parâmetro idElentoaudio. Ou seja, o endereço da tecla será procurado no html e reproduzido.
 function tocaSom(idElementoAudio){
-document.querySelector(idElementoAudio).play();
-
-
+const elemento = document.querySelector(idElementoAudio);
 // se o elemento pesquisado forigual a "inexistente", o alerta de elemento não encontrado não aparecerá.
-
-      if(elemento === nill){ 
+      if(elemento === null){ 
          alert('Elemento não encontrado');
       }
 //se o elemento exibir, a função play daquele elemento acordará, ou seja, a tecla será reproduzida.
@@ -19,7 +16,6 @@ document.querySelector(idElementoAudio).play();
 const listaDeTeclas = document.querySelectorAll('.tecla');
 // Estrutura de repetição - Enquanto 
 // para que as teclas não sejam repetidas de maneira infinita, criamos o flor, com valor de início 0, e valor final chamado de contador < ListaDeTeclas.Length, para que a repetição seja exatamente do tamanho da nossa lista, que é de 9 teclas.
-
         for(let contador = 0; contador < listaDeTeclas.length;contador++) {
             const tecla = listaDeTeclas[contador];
 // classlist armazena todos as todas as informações do elemento pesquisado.
@@ -35,11 +31,11 @@ const listaDeTeclas = document.querySelectorAll('.tecla');
             };
 //onkeydown significa "quando a tecla estiver pressionada", nesse caso uma função? É a estilização de mudança de cor do botão quando as teclas Enter e space forem apertadas.
             tecla.onkeydown = function() {
-             tecla.classlist.add('ativa'); 
+             tecla.classList.add('ativa'); 
             };
 //onkeyup significa "quando a tecla estiver erguida, não pressionada", nesse caso, a função será removida.
             tecla.onkeyup = function(){
-                tecla.classlist.remove('ativa');
-            }
+                tecla.classList.remove('ativa');
+            };
             console.log(contador)
       }
