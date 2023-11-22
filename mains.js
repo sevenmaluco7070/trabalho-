@@ -1,10 +1,23 @@
 //a função que deve ser executada é tocaSom, mas que som? Nesse caso, sará o parâmetro idElentoaudio. Ou seja, o endereço da tecla será procurado no html e reproduzido.
 function tocaSom(idElementoAudio){
 document.querySelector(idElementoAudio).play();
-}
+
+
 // se o elemento pesquisado forigual a "inexistente", o alerta de elemento não encontrado não aparecerá.
-// Estrutura de repetição - Enquanto 
+
+      if(elemento === nill){ 
+         alert('Elemento não encontrado');
+      }
+//se o elemento exibir, a função play daquele elemento acordará, ou seja, a tecla será reproduzida.
+      if(elemento && elemento.localName === 'audio'){
+        elemento.play();
+      }else {
+        alert('Elemento não encontrado');
+      }
+}
+//querySelector encontra as informações da tela pesquisada no documento
 const listaDeTeclas = document.querySelectorAll('.tecla');
+// Estrutura de repetição - Enquanto 
 // para que as teclas não sejam repetidas de maneira infinita, criamos o flor, com valor de início 0, e valor final chamado de contador < ListaDeTeclas.Length, para que a repetição seja exatamente do tamanho da nossa lista, que é de 9 teclas.
 
         for(let contador = 0; contador < listaDeTeclas.length;contador++) {
